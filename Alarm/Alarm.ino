@@ -1,3 +1,8 @@
+/*
+Guide for Controlling Lights:   https://learn.adafruit.com/rgb-led-strips/arduino-code
+Guide for Using Time functions: https://www.pjrc.com/teensy/td_libs_TimeAlarms.html
+*/
+
 #include <TimeLib.h>
 #include <TimeAlarms.h>
 
