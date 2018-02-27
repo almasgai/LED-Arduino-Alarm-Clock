@@ -5,8 +5,6 @@
 #define DELAY 10          // 20ms internal delay; increase for slower fades
 #define DAYINSECS 86400   // Total number of seconds in a single day
 
-long countDown = 2700 * 1000;
-
 void setup() {
 
   pinMode(PIN, OUTPUT);
@@ -28,22 +26,15 @@ void loop() {
 }
 
 void fade() {
-  
-while(countDown != 0){
-  delay(1000);
-
-    // fade in
-    for(int i=0; i< 255; i++) {
-      analogWrite(PIN, i);
-      delay(DELAY);
-    }
-
-    // fade out
-    for(int i=0; i< 255; i++) {
-      analogWrite(PIN, 255 - i);
-      delay(DELAY);
-    }
-    countDown -= 1000;
+  // fade in
+  for(int i=0; i< 255; i++) {
+    analogWrite(PIN, i);
+    delay(DELAY);
   }
-  countDown = 2700 * 1000; 
+
+  // fade out
+  for(int i=0; i< 255; i++) {
+    analogWrite(PIN, 255 - i);
+    delay(DELAY);
+  }
 }
